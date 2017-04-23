@@ -34,6 +34,10 @@ public:
   /////* TODO: explain
   MatrixXd Xsig_aug_;
 
+  // noise covariance matrix RADAR
+  MatrixXd R_RADAR_;
+  // noise covariance matrix LIDAR
+  MatrixXd R_LIDAR_;
   ///* time when the state is true, in us
   long long time_us_;
 
@@ -123,6 +127,8 @@ public:
 
 
   void PredictMeanAndCovariance();
+
+  float NormalizeAngle(float angle);
 
 };
 
